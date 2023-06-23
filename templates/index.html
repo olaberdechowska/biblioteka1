@@ -1,0 +1,62 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Library</title>
+    <link rel="stylesheet" href="{% static 'style2.css' %}">
+
+</head>
+<body>
+    <nav>
+                             <ul>
+                <li class="dropdown">
+                  <a href="{% url 'about_page'%}">About</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{% url 'about_page'%}">Library</a></li>
+                    <li><a href="{% url 'about_page'%}">History</a></li>
+                    <li><a href="{% url 'about_page'%}">Book collections</a></li>
+                  </ul>
+                </li>
+                  <li class="dropdown">
+                  <a href="{% url 'contact_page'%}">Contact</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{% url 'contact_page'%}">Address</a></li>
+                    <li><a href="{% url 'contact_page'%}">Opening hours</a></li>
+                    <li><a href="{% url 'contact_page'%}">Contact form</a></li>
+                  </ul>
+                </li>
+                  <li class="dropdown">
+                  <a href="{% url 'reading_page'%}">Reading room</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{% url 'catalog'%}">Book catalog</a></li>
+                  </ul>
+                </li>
+                  <li class="dropdown">
+                  <a href="{% url 'login_page'%}">User account</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{% url 'login_page'%}">Login</a></li>
+                    <li><a href="{% url 'register_page'%}">Registration</a></li>
+
+                  </ul>
+                </li>
+            </ul>
+    </nav>
+
+
+  <div id="welcomeDiv" class="welcome-message">
+    <h2>Welcome in COOLEST Book Club </h2>
+  </div>
+ <script>
+        window.onload = function() {
+            var welcomeDiv = document.getElementById("welcomeDiv");
+            welcomeDiv.classList.add("from-hidden")
+        };
+    </script>
+
+
+</body>
+</html>

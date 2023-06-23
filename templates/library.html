@@ -1,0 +1,123 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'reading_page.css' %}">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://kit.fontawesome.com/920df43007.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
+</head>
+<body style=font-family:"Oswald">
+
+
+    <nav style="position:absolute;">
+                 <ul>
+                <li class="dropdown">
+                  <a href="{% url 'about_page'%}">About</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{% url 'about_page'%}">Library</a></li>
+                    <li><a href="{% url 'about_page'%}">History</a></li>
+                    <li><a href="{% url 'about_page'%}">Book collections</a></li>
+                  </ul>
+                </li>
+                  <li class="dropdown">
+                  <a href="{% url 'contact_page'%}">Contact</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{% url 'contact_page'%}">Address</a></li>
+                    <li><a href="{% url 'contact_page'%}">Opening hours</a></li>
+                    <li><a href="{% url 'contact_page'%}">Contact form</a></li>
+                  </ul>
+                </li>
+                  <li class="dropdown">
+                  <a href="{% url 'reading_page'%}">Reading room</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{% url 'catalog'%}">Book catalog</a></li>
+                  </ul>
+                </li>
+                  <li class="dropdown">
+                  <a href="{% url 'login_page'%}">User account</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{% url 'login_page'%}">Login</a></li>
+                    <li><a href="{% url 'register_page'%}">Registration</a></li>
+
+                  </ul>
+                </li>
+            </ul>
+     </nav>
+
+
+  <div class="wrapper" style="position:absolute;">
+      <i id="left" class="fa-solid fa-angle-left"></i>
+      <div class="carousel">
+        <img src="{% static 'a3673b4b-74cd-4544-8eba-bd0b51fbee5f-1360x2040.jpeg'%}" alt="img" draggable="false">
+        <img src="{% static 'solaris_60588135b7fe8.jpg'%}" alt="img" draggable="false">
+          <img src="{% static '9780241375273.jpg'%}" alt="img" draggable="false">
+          <img src="{% static '02bbc540531495.57836e92d8e40-kopia.jpg'%}" alt="img" draggable="false">
+          <img src="{% static 'maly.jpg'%}" alt="img" draggable="false">
+          <img src="{% static '9d23b7544a4cd72df69d5d5fc41d6a27.jpeg'%}" alt="img" draggable="false">
+
+      </div>
+      <i id="right" class="fa-solid fa-angle-right"></i>
+    </div>
+    <script src="{% static 'new.js' %}"></script>
+
+    <div style="transform: translate3d(1300px, 240px, 10px);">
+        <h1 style="width:max-content"> The most popular rental book </h1>
+    </div>
+        <div style="transform: translate3d(600px, 300px, 10px);">
+            <h3 style="width: max-content;">
+                If you want to join our book club make <a href="{% url 'register_page'%}"> account  <i class="fa-solid fa-user"></i></a>
+                Here you have catalog with our <a href="{% url 'catalog'%}"> books <i class="fa-solid fa-book"></i></a>
+                Enjoy
+                cytat
+                ikonka do zalozenia darmowego konta lub login
+                </h3>
+         </div>
+
+        <div style="transform:translate3d(-700px, 700px, 10px)">
+  <canvas id="myChart"></canvas>
+</div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script>
+          const ctx = document.getElementById('myChart');
+
+          new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: ['Biografie', 'Dla dzieci', 'Horror', 'Literatura faktu', 'Literatura obyczajowa', 'Literatura piękna obca', 'Literatura piękna polska', 'Poezja'],
+              datasets: [{
+                label: 'Amount of books',
+                data: [3, 3, 2, 2, 7, 3, 2, 1],
+                borderWidth: 1
+              }]
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true
+                }
+              }
+            }
+          });
+        </script>
+
+
+
+
+</body>
+</html>
+
+
+
+

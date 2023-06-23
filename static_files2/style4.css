@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500&family=Roboto&display=swap');
+
+
+body {
+    background-color:#FFC0CB;
+    font-family:"Oswald";
+}
+
+
+      /* Stylizacja paginacji */
+        .pagination {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .pagination li {
+            margin: 0 4px;
+        }
+
+        .pagination a {
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: #f4f4f4;
+            color: #333;
+            text-decoration: none;
+            border: 1px solid #ddd;
+        }
+
+        .pagination .current-page {
+            font-weight: bold;
+        }
+
+        .pagination .previous-page,
+        .pagination .next-page {
+            font-weight: bold;
+            color: #fff;
+            background-color: #3C6CA8;
+            border-color: #3C6CA8;
+        }
+
+        .pagination .disabled {
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+.pagination a.active {
+  background-color: #FFC0CB;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #FFC0CB;}
+
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+table {
+        border-collapse: collapse;
+        width: 100%;
+        font-family:"Oswald",sans-serif;
+        font-weight: regular 400;
+
+    }
+
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+        margin:50px;
+        border-bottom: 1px solid #FF80AA;
+        font-family:"Oswald";
+        font-weight: extra-light 200;
+        color:#1B365C;
+    }
+    th {
+        background-color: white;
+    }
+    tr:nth-child(even) {
+        background-color: white;
+    }
+    tr.short {
+        background-color: white;
+    }
+    tr.short:nth-child(even) {
+        background-color: white;
+    }
+
+h1{
+    text-align:center;
+    color:#3C6CA8;
+
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+
+}
+
+

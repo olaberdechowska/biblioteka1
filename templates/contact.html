@@ -1,0 +1,200 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style_about.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <link rel="stylesheet" href="{% static 'contact.css' %}">
+
+
+</head>
+<nav>
+                 <ul>
+                <li class="dropdown">
+                  <a href="{% url 'about_page'%}">About</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{% url 'about_page'%}">Library</a></li>
+                    <li><a href="{% url 'about_page'%}">History</a></li>
+                    <li><a href="{% url 'about_page'%}">Book collections</a></li>
+                  </ul>
+                </li>
+                  <li class="dropdown">
+                  <a href="{% url 'contact_page'%}">Contact</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{% url 'contact_page'%}">Address</a></li>
+                    <li><a href="{% url 'contact_page'%}">Opening hours</a></li>
+                    <li><a href="{% url 'contact_page'%}">Contact form</a></li>
+                  </ul>
+                </li>
+                  <li class="dropdown">
+                  <a href="{% url 'reading_page'%}">Reading room</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{% url 'catalog'%}">Book catalog</a></li>
+                  </ul>
+                </li>
+                  <li class="dropdown">
+                  <a href="{% url 'login_page'%}">User account</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{% url 'login_page'%}">Login</a></li>
+                    <li><a href="{% url 'register_page'%}">Registration</a></li>
+
+                  </ul>
+                </li>
+            </ul>
+  </nav>
+        <div style="margin-top=-50px;
+            margin-left: 25px;">
+            <div data-tabs class="tabs">
+               <div class="tab">
+                  <input type="radio" name="tabgroup" id="tab-1" checked>
+                  <label for="tab-1">Address</label>
+                  <div class="tab__content">
+
+                         <p>Biblioteka Miejska<br>
+            ul. Kwiatowa 10<br>
+            00-123 Miastowo  </p>
+
+            <table>
+              <tr>
+                <th>Transportation Mode</th>
+                <th>Lines</th>
+                <th>Stop</th>
+              </tr>
+              <tr>
+                <td>Bus</td>
+                <td>124, 134, 144, 164, 503</td>
+                <td>National Museum stop or AGH/UR stop</td>
+              </tr>
+              <tr>
+                <td>Tram</td>
+                <td>6, 20</td>
+                <td>Oleandra stop</td>
+              </tr>
+            </table>
+
+    </table>
+                      <br>
+
+
+
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8624.622758072786!2d19.93783459818417!3d50.087206779143514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165af8aaebcbd3%3A0x162ce54d5f39f1dd!2sSzpital%20Miejski%20Specjalistyczny%20im.%20G.%20Narutowicza!5e0!3m2!1spl!2spl!4v1684948616353!5m2!1spl!2spl" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                  </div>
+               </div>
+               <div class="tab">
+                  <input type="radio" name="tabgroup" id="tab-3">
+                  <label for="tab-3">Opening hours</label>
+                  <div class="tab__content">
+                    <br>
+                      <table>
+                          <tr>
+                            <th>Day</th>
+                            <th>Hours</th>
+                          </tr>
+                          <tr>
+                            <td>Monday</td>
+                            <td>9:00 AM - 6:00 PM</td>
+                          </tr>
+                          <tr>
+                            <td>Tuesday</td>
+                            <td>9:00 AM - 6:00 PM</td>
+                          </tr>
+                          <tr>
+                            <td>Wednesday</td>
+                            <td>9:00 AM - 6:00 PM</td>
+                          </tr>
+                          <tr>
+                            <td>Thursday</td>
+                            <td>9:00 AM - 6:00 PM</td>
+                          </tr>
+                          <tr>
+                            <td>Friday</td>
+                            <td>9:00 AM - 6:00 PM</td>
+                          </tr>
+                          <tr>
+                            <td>Saturday</td>
+                            <td>10:00 AM - 2:00 PM</td>
+                          </tr>
+                          <tr>
+                            <td>Sunday</td>
+                            <td>Closed</td>
+                          </tr>
+                        </table>
+
+
+
+
+
+
+
+                  </div>
+               </div>
+               <div class="tab">
+                  <input type="radio" name="tabgroup" id="tab-4">
+                  <label for="tab-4">Contact</label>
+                  <div class="tab__content">
+                      <br>
+                       <table>
+                              <tr>
+                                <th>Contact Information</th>
+                                <th>Details</th>
+                              </tr>
+                              <tr>
+                                <td>Phone number</td>
+                                <td>+48 123 456 789</td>
+                              </tr>
+                              <tr>
+                                <td>E-mail address</td>
+                                <td>kontakt@bibliotekamiejska.pl</td>
+                              </tr>
+                              <tr>
+                                <td>Website</td>
+                                <td><a href="http://www.bibliotekamiejska.pl">www.bibliotekamiejska.pl</a></td>
+                              </tr>
+                            </table>
+
+                  </div>
+               </div>
+                <div class="tab">
+                  <input type="radio" name="tabgroup" id="tab-5" checked>
+                  <label for="tab-5">Contact form</label>
+                  <div class="tab__content">
+                        <form id="form" class="topBefore">
+
+                                  <input id="name" type="text" placeholder="NAME">
+                                  <input id="email" type="text" placeholder="E-MAIL">
+                                  <textarea id="message" type="text" placeholder="MESSAGE"></textarea>
+                          <input id="submit" type="submit" value="GO!">
+
+                        </form>
+
+
+                  </div>
+
+            </div>
+            </div>
+        </div>
+    <script>
+        (function($, document) {
+
+          // get tallest tab__content element
+          let height = -1;
+
+            $('.tab__content').each(function() {
+                height = height > $(this).outerHeight() ? height : $(this).outerHeight();
+             $(this).css('position', 'absolute');
+            });
+
+          // set height of tabs + top offset
+            $('[data-tabs]').css('min-height', height + 40 + 'px');
+
+    }(jQuery, document));
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,90 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style_about.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <link rel="stylesheet" href="{% static 'about.css' %}">
+
+
+</head>
+<nav style="transform:translateY(-110%)">
+                 <ul>
+                    <li class="dropdown">
+                      <a href="{% url 'about_page'%}">About</a>
+                      <ul class="dropdown-menu">
+                        <li><a href="{% url 'about_page'%}">Library</a></li>
+                        <li><a href="{% url 'about_page'%}">History</a></li>
+                        <li><a href="{% url 'about_page'%}">Book collections</a></li>
+                      </ul>
+                    </li>
+                      <li class="dropdown">
+                      <a href="{% url 'contact_page'%}">Contact</a>
+                      <ul class="dropdown-menu">
+                        <li><a href="{% url 'contact_page'%}">Address</a></li>
+                        <li><a href="{% url 'contact_page'%}">Opening hours</a></li>
+                        <li><a href="{% url 'contact_page'%}">Contact form</a></li>
+                      </ul>
+                    </li>
+                      <li class="dropdown">
+                      <a href="{% url 'reading_page'%}">Reading room</a>
+                      <ul class="dropdown-menu">
+                        <li><a href="{% url 'catalog'%}">Book catalog</a></li>
+                      </ul>
+                    </li>
+                      <li class="dropdown">
+                      <a href="{% url 'login_page'%}">User account</a>
+                      <ul class="dropdown-menu">
+                        <li><a href="{% url 'login_page'%}">Login</a></li>
+                        <li><a href="{% url 'register_page'%}">Registration</a></li>
+
+                      </ul>
+                    </li>
+                  </ul>
+  </nav>
+    <div style="height:500px;
+        margin-left: 25px;">
+        <div data-tabs class="tabs">
+           <div class="tab">
+              <input type="radio" name="tabgroup" id="tab-1" checked>
+              <label for="tab-1">Library</label>
+              <div class="tab__content">
+                 <h4>Welcome in our coolest club Book!</h4>
+
+                    <p>We are a place where the passion for reading, discovering knowledge and developing becomes a reality. Our library is accessible to all members of our community and offers a variety of resources and services designed to meet the needs of readers of all ages.</p>              </div>
+       </div>
+       <div class="tab">
+          <input type="radio" name="tabgroup" id="tab-3">
+          <label for="tab-3">History</label>
+          <div class="tab__content">
+            <p> The history of our library dates back to 1975, when it was founded by a group of literature enthusiasts with the aim of providing valuable reading materials for the inhabitants of our city. Since then, we have grown significantly, becoming one of the most important cultural centers in the region.</p>          </div>
+       </div>
+       <div class="tab">
+          <input type="radio" name="tabgroup" id="tab-4">
+          <label for="tab-4">Sets of books</label>
+          <div class="tab__content">
+            <p>In our collection you will find a wealth of books, magazines, audiobooks, films and other multimedia. We always try to update our collections to provide variety and respond to readers' interests in a variety of fields, from fiction to scientific publications. In addition, in our library you have access to virtual resources such as e-books, databases and educational platforms that allow you to learn and develop anywhere and anytime.</p>          </div>
+       </div>
+    </div>
+    </div>
+    <script>
+        (function($, document) {
+
+          // get tallest tab__content element
+          let height = -1;
+
+            $('.tab__content').each(function() {
+                height = height > $(this).outerHeight() ? height : $(this).outerHeight();
+             $(this).css('position', 'absolute');
+            });
+
+          // set height of tabs + top offset
+            $('[data-tabs]').css('min-height', height + 40 + 'px');
+
+    }(jQuery, document));
+    </script>
+</body>

@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+    <link href="{% static 'userprofil.css' %}" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <nav style="transform:translateX(470px)">
+                 <ul>
+                <li class="dropdown">
+                  <a href="{% url 'about_page'%}">About</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{% url 'about_page'%}">Library</a></li>
+                    <li><a href="{% url 'about_page'%}">History</a></li>
+                    <li><a href="{% url 'about_page'%}">Book collections</a></li>
+                  </ul>
+                </li>
+                  <li class="dropdown">
+                  <a href="{% url 'contact_page'%}">Contact</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{% url 'contact_page'%}">Address</a></li>
+                    <li><a href="{% url 'contact_page'%}">Opening hours</a></li>
+                    <li><a href="{% url 'contact_page'%}">Contact form</a></li>
+                  </ul>
+                </li>
+                  <li class="dropdown">
+                  <a href="{% url 'reading_page'%}">Reading room</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{% url 'catalog'%}">Book catalog</a></li>
+                  </ul>
+                </li>
+                  <li class="dropdown">
+                  <a href="{% url 'login_page'%}">User account</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{% url 'login_page'%}">Login</a></li>
+                    <li><a href="{% url 'register_page'%}">Registration</a></li>
+
+                  </ul>
+                </li>
+            </ul>
+    </nav>
+    <div>
+        <h1>User Profile</h1>
+        <h1>Hello {{ user.username }}</h1>
+        <h3>We are always happy to see you, {{ user.username }}</h3>
+        <h4>Information about your rentals:</h4>
+        <p>Rented books count: {{ rented_books_count }}</p>
+
+        <p>Rented books information:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Rental Date</th>
+                    <th>Return Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for rental_info in rented_books_info %}
+            <tr>
+                <td>{{ rental_info.book.title }}</td>
+                <td>{{ rental_info.date_rental }}</td>
+                <td>{{ rental_info.date_return }}</td>
+                <td>
+                    <form action="{% url 'return_book' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="rental_book_id" value="{{ rental_info.rental.book.id}}">
+                        <input type="submit" value="Zwróć">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+                <tr>
+                    <td colspan="4">
+                        <h4>Rent a book</h4>
+                        <form action="{% url 'rent_book' %}" method="POST">
+                            {% csrf_token %}
+                            <select name="nazwa">
+                                {% for book in wszystkie_ksiazki %}
+                                <option value="{{ book.id }}">{{ book.title }}</option>
+                                {% endfor %}
+                            </select>
+                            <button type="submit">Rent</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+                  <a href="{% url 'logout_page' %}">Log out</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:500');
+
+body {
+    background-color: #FFC0CB;
+    background-image: url('logo.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position: 35vw 25vh;
+    font-family: "Oswald";
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    position: relative;
+}
+
+nav a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #3C6CA8;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+nav .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #FFC0CB;
+    padding: 10px;
+    min-width: 120px;
+    color: #1B365C;
+}
+
+nav .dropdown:hover .dropdown-menu {
+    display: block;
+    transition-delay: 0.5s;
+    color: #1B365C;
+}
+
+nav .dropdown-menu li {
+    margin-bottom: 5px;
+    color: #1B365C;
+}
+
+nav .dropdown-menu a {
+    color: #1B365C;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3C6CA8;
+}
+
+canvas {
+     display: block;
+     width: 100vw;
+     height: 100vh;
+}
+.welcome-message {
+    display: block; /* Ukryj początkowo tekst powitalny */
+    text-align: center;}
+
+   .from-hidden {
+    animation: showing 4s both;
+    font-size: 100px;
+}
+
+
+@keyframes showing {
+    0% {
+        opacity: 0; /* Początkowo całkowicie przezroczysty */
+    }
+    25% {
+        opacity:0.5
+    }
+    50% {
+        opacity: 1; /* Połowa czasu - całkowicie widoczny */
+    }
+    75% {
+        opacity: 0.5; /* Koniec - ponownie całkowicie przezroczysty */
+    }
+    100% {
+        opacity: 0; /* Połowa czasu - całkowicie widoczny */
+    }
+}
+
+h2{
+    font-family: "Oswald";
+    color:#3C6CA8;
+
+}

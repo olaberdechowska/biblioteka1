@@ -1,0 +1,49 @@
+ {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style4.css' %}">
+</head>
+<body>
+    <div>
+        <h1>All books</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+                    <th>Subtitle</th>
+                    <th>Language</th>
+                    <th>ID</th>
+                </tr>
+            </thead>
+            <tbody id="book-list">
+                {% for book in page_obj %}
+                <tr>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.genre }}</td>
+                    <td>{{ book.description }}</td>
+                    <td>{{ book.language }}</td>
+                    <td>{{ book.id }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="pagination">
+            {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}" class="previous-page">Previous</a>
+            {% endif %}
+            <span class="current-page">{{ page_obj.number }}</span>
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="next-page">Next</a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
